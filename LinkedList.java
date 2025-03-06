@@ -28,7 +28,7 @@ this.next = null;
 public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
-        
+
 int pos=0;
 int data,data1;
         System.out.println("ENTER INTEGERS TO CREATE NODES (ENTER A NON-INTEGER TO EXIT):");
@@ -58,14 +58,33 @@ int data,data1;
             }
             System.out.println("LINKED LIST AFTER INSERTING");
             list.displayList();
+            System.exit(0);
           }
         }
     }
-      public void insertEnd(int data) 
+public void insertEnd(int data) 
     {    
-       //TYPE YOUR CODE HERE 
+        //Create a new node    
+        Node newNode = new Node(data);    
+        //Checks if the list is empty    
+        if(head == null) 
+        {    
+            //If list is empty, both head and tail will point to new node    
+            head = newNode;    
+            tail = newNode;    
+        }    
+        else 
+        {    
+            Node temp=head;
+            while( temp.next!= null) 
+            {    
+                temp = temp.next;    
+            }    
+temp.next=newNode;
+System.out.println("Element Inserted");
+        }    
     }  
-     
+
 public void displayList() {
         Node current = head;
         while (current != null) {
